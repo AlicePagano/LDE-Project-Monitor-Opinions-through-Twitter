@@ -127,7 +127,7 @@ A dataset of tweets from January 2017 to December 2020 is collected using hashta
 More specifically, for each month, we make a request with the Twitter API by filtering through Italian hashtags such as “$\#$iononmivaccino” or “$\#$libertàdiscelta”. However, because of the limited number of requests at our disposal, a maximum of 100 tweets can be extracted for each month.
 Moreover, for each tweet, we store only the most relevant information which will be useful in our analysis as the tweet text and id or the user location information.
 
-The collected data are processed in order to associate to each tweet its source location taken from the user location field, if present. Otherwise, the tweet is rejected. In particular, to extract meaningful information from it, we develop a Python script which compare the text with a list of all Italian cities, provinces, regions and provinces' initials by means of regex. At the end, for each year under analysis, we obtain a dataset of dimension $d_t$ (Tab. \ref{tab:dataset_dimension}) where each tweet is associated to an Italian region and to geographical coordinates which correspond to the region capital. The error associated to the tweet region classification algorithm turns to be of around $3\%$. 
+The collected data are processed in order to associate to each tweet its source location taken from the user location field, if present. Otherwise, the tweet is rejected. In particular, to extract meaningful information from it, we develop a Python script which compare the text with a list of all Italian cities, provinces, regions and provinces' initials by means of regex. At the end, for each year under analysis, we obtain a dataset of dimension $d_t$ (Tab. \ref{tab:dataset_dimension}) where each tweet is associated to an Italian region and to geographical coordinates which correspond to the region capital. The error associated to the tweet-region classification algorithm turns to be of around $3\%$. 
 
 After that, each tweet text is manually analyzed in order to verify if it is really expressing a novax opinion, otherwise the tweet is not considered in the further analysis. The dimension of the dataset after this preprocessing is referred as $d_{nv}$ (Tab. \ref{tab:dataset_dimension}). Moreover, a semantic analysis of novax tweets content is performed by filtering the tweet text by a list of common stop-words (Fig. \ref{fig:count_word}).
 
@@ -222,8 +222,7 @@ These non negligible stochastic fluctuations in the dimension of the dataset are
 \begin{figure}[t]
    \begin{minipage}[l]{1.0\columnwidth}
    \centering
-   \includegraphics[width=1\textwidth]{imag
-   e/word_2017-2020.pdf}
+   \includegraphics[width=1\textwidth]{Paper_template/image/word_2017-2020.pdf}
    \caption{Histogram of most used words in the novax collected tweets in 2017-2020 time interval.}
    \label{fig:count_word}
    \end{minipage}
@@ -235,7 +234,7 @@ Moreover, there are two openly novax association accounts (“@clivatoscana” f
 \begin{figure}[t]
    \begin{minipage}[l]{1.0\columnwidth}
    \centering
-
+   \includegraphics[width=1\textwidth]{Paper_template/image/user_overlap/overlap.pdf}
    \caption{Twitter user overlap between 2017, 2018, 2019 and 2020. Every blue dot indicates the concerned year. Then, the top bar chart tells that for the given year, we have that many users. Two or more connected dots, indicate user that have tweeted in multiple years. On the bar chart on the left, the dimension $d_u$ of the dataset for each year is reported.
    }
    \label{fig:overlap}
@@ -327,20 +326,20 @@ Tab. \ref{tab:inhab-activity} shows $A$ compared to the number of inhabitants $I
 	\begin{figure*}[t]
 	\begin{minipage}[c]{0.49\linewidth}
 	\centering
-	\subfloat[][2017]{\includegraphics[width=0.8\textwidth]{image/map/map_2017.png} \label{fig:map_result_a} }
+	\subfloat[][2017]{\includegraphics[width=0.8\textwidth]{Paper_template/image/map/map_2017.pdf} \label{fig:map_result_a} }
 	\end{minipage}
 	\begin{minipage}[]{0.49\linewidth}
 	\centering
-	\subfloat[][2018]{\includegraphics[width=0.8\textwidth]{image/map/map_2018.png} \label{fig:map_result_b} }
+	\subfloat[][2018]{\includegraphics[width=0.8\textwidth]{Paper_template/image/map/map_2018.pdf} \label{fig:map_result_b} }
 	\end{minipage} \\
 	\vfill
 	\begin{minipage}[c]{0.49\linewidth}
 	\centering
-	\subfloat[][2019]{\includegraphics[width=0.8\textwidth]{image/map/map_2019.png} \label{fig:map_result_c} }
+	\subfloat[][2019]{\includegraphics[width=0.8\textwidth]{Paper_template/image/map/map_2019.pdf} \label{fig:map_result_c} }
 	\end{minipage}
 	\begin{minipage}[]{0.49\linewidth}
 	\centering
-	\subfloat[][2020]{\includegraphics[width=0.8\textwidth]{image/map/map_2020.png} \label{fig:map_result_d} }
+	\subfloat[][2020]{\includegraphics[width=0.8\textwidth]{Paper_template/image/map/map_2020.pdf} \label{fig:map_result_d} }
 	\end{minipage}
 	\caption{\label{fig:map_result} Superposition maps of measles vaccination coverage (shades of red) and novax activity on Twitter (blue points with radius proportional to its weight). The years under analysis are 2017-2020. Vaccination coverage for 2020 is not available, so, in 2020 map, 2019 vaccination coverage is used.}
 	\end{figure*}
@@ -356,16 +355,16 @@ In Fig. \ref{fig:map_result} is reported a superposition of vaccination coverage
 \section{Conclusions}
 \label{sec:conclusions}
 
-In this work, we analyze the distribution of novax opinions in Italy in the time interval 2017-2020 by means of tweets with clearly anti-vaccine content. From a semantic analysis, it emerges that there are some super spreaders who frequently create original tweets, that are retweeted by the majority. In 2020, however, there is an higher number of unique users and they are also different with respect to the others years. This could be a consequence of Covid-19 pandemic and the administration of the first vaccine doses: because people feel it as a closer topic, many more express their doubts and opposition to vaccinations. 
-Moreover, from the provenience of the collected tweets, we make a geographical map of novax opinions in Italy, assigning a weight to each region. 
+In this work, we analyze the distribution of novax opinions in Italy in the time interval 2017-2020 by means of tweets with clearly anti-vaccine content. From a semantic analysis, it emerges that there are some super spreaders who frequently create original tweets, that are retweeted by the majority. However, in 2020 there is an higher number of unique users which are also different with respect to the others years. This could be a consequence of Covid-19 pandemic: people feel vaccination as a closer topic and many more users express their doubts and oppositions. 
+Moreover, from the provenience of the collected tweets, we make a geographical map of novax opinions in Italy by assigning a weight to each region. 
 %We assign a weight to each user depending of the number of its tweet, the like and the retweets he receives; summing all the users weights from a region we obtain a region weight of anti-vaccine opinions. 
 It results that especially Toscana, Emilia Romagna and Veneto have novax high concentrations, mostly due to local super spreaders. 
 The distribution of novax opinions on the Italian territory does not seem to have changed relevantly over the years and looks unaffected by Lorenzin Decree on vaccination and by Covid-19. Finally, we do not find a correspondence between low coverage and novax hubs.
 %: the Autonomous province of Bolzano has by far the lowest vaccination coverage, but there is no greater amount of novax ideas on Twitter than in the rest of Italy.
-However, to confirm all these hypothesis with a meaningful confidence level, order of magnitudes higher number of data would have been required.
+However, to confirm all these hypothesis with a meaningful confidence level, many more data would have been required.
 
-To conclude, as a future analysis, it would be more interesting and useful to make a coarse graining by province of origin, but, for this purpose, even more data would have been required. 
-A such big data collection is indeed worthy. Mining and localizing opinions from social networks has a great relevance: this type of analysis can be useful in identifying hubs of anti-vaccination ideas and consequently in choosing where to invest resources for public opinion awareness campaigns on the important issue of collective responsibility assumed by getting vaccinated.
+To conclude, as a future analysis, it would be interesting and useful to make a coarse graining by province of origin, but, for this purpose, even more data are needed. 
+A such big data collection is indeed worthy. Mining and localizing opinions from social networks has a great relevance: this type of analysis can be useful in identifying hubs of anti-vaccination ideas and consequently in choosing where to invest resources for public opinion awareness campaigns on vaccination.
 
 
 
